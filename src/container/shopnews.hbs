@@ -1,0 +1,38 @@
+<main class="p-2">
+    <section>
+        {{> breadcrumb}}
+    </section>
+    <br>
+    <br>
+
+
+    <div class="row mb-5 g-4">
+        <div class="col-12 g-4">
+            {{#with newsData}}
+            <img class="card-img-top" src="{{photo}}">
+            <div>
+                {{#with head}}
+                <div>
+                    <h2>{{heading}}</h2>
+                    <p>{{description}}</p>
+                </div>
+                {{/with}}
+
+                {{#each body}}
+                <p>{{title}}{{text}}</p>
+                {{/each}}
+
+            </div>
+            {{/with}}
+        </div>
+    </div>
+    <section>
+        {{> shoppost}}
+    </section>
+    <hr>
+    <section>
+        {{> shopaction}}
+    </section>
+
+
+</main>
