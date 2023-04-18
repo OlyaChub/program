@@ -76,25 +76,9 @@
     </div>
     {{/with}}
     <hr>
-    {{#with service}}
-    <div class="card text-bg-success">
-        <div class="pt-4 pb-3 px-4">
-            <h2 class="text-center" class="card-title">{{title}}</h2>
-            <div class="row gx-4 gy-4">
-                <div class="col-12">
-                    <div class="card-body">
-                        <p class="text-center">{{description}}</p>
-                    </div>
-                    <div class="text-center" class="m-1">
-                        {{#each buttons}}
-                        <button class="btn btn-primary"><a href="{{link}}" class="nav-link">{{text}}</a></button>
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{/with}}
+    <section>
+        {{> shopaction}}
+    </section>
     <hr>
 
 
