@@ -1,0 +1,18 @@
+{{#with newsBlock}}
+<h2 class="text-center">{{title}}</h2>
+<div class="row gx-4 gy-4">
+    {{#each cards}}
+    <div class="col-3">
+        <div class="card text-bg-secondary" class="mb-5">
+            <div class="card-header">{{title}} <span class="badge text-bg-success rounded-pill text-uppercase">{{#if
+                    isTop}}Top{{/if}}</span>
+                <span class="badge text-bg-danger rounded-pill text-uppercase">{{#if isNew}}New{{/if}}</span>
+            </div>
+            <div class="card-body">
+                <p>{{description}}</p>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/with}}
