@@ -1,20 +1,4 @@
 <main class="p-2">
-    {{#with navigation}}
-    <div class="card">
-        <div class="nav">
-            <div class="col-4">
-                <h3>{{Logo}}</h3>
-            </div>
-            {{#each links}}
-            <div class="ms-5" class="nav-item">
-                <a href="{{href}}" class="nav-link">{{text}}</a>
-            </div>
-            {{/each}}
-        </div>
-    </div>
-    {{/with}}
-    <br>
-    <br>
     {{#with newsBlock}}
     <h2 class="text-center">{{title}}</h2>
     <div class="row gx-4 gy-4">
@@ -92,36 +76,10 @@
     </div>
     {{/with}}
     <hr>
-    {{#with service}}
-    <div class="card text-bg-success">
-        <div class="pt-4 pb-3 px-4">
-            <h2 class="text-center" class="card-title">{{title}}</h2>
-            <div class="row gx-4 gy-4">
-                <div class="col-12">
-                    <div class="card-body">
-                        <p class="text-center">{{description}}</p>
-                    </div>
-                    <div class="text-center" class="m-1">
-                        {{#each buttons}}
-                        <button class="btn btn-primary"><a href="{{link}}" class="nav-link">{{text}}</a></button>
-                        {{/each}}
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    {{/with}}
+    <section>
+        {{> shopaction}}
+    </section>
     <hr>
 
-    {{#each footer}}
-    <div class="row">
-        {{#each this}}
-        <div class="col-3">
-            <div class="text-primary" class="nav-item" class="p-3">
-                <a href="{{link}}" class="nav-link">{{text}}</a>
-            </div>
-        </div>
-        {{/each}}
-    </div>
-    {{/each}}
+
 </main>
