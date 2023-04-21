@@ -2,14 +2,10 @@
     <div class="mb-3">
         {{#with header}}
         <h2>{{title}}</h2>
-        <div class="col-3 pm-3">
-            <div class="nav-item mb-2">
-                <div class="card">
-                    {{#with button}}
-                    <a href="{{link}}" class="nav-link">{{text}}</a>
-                    {{/with}}
-                </div>
-            </div>
+        <div class="col-4 pm-3">
+            {{#with button}}
+            <button class="btn btn-outline-secondary"><a href="{{link}}" class="nav-link">{{text}}</a></button>
+            {{/with}}
         </div>
         {{/with}}
     </div>
