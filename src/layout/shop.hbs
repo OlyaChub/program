@@ -18,25 +18,28 @@
 </head>
 
 <body class="p-2">
-    <div class="p-2 mb-5 g-4">
+
+    <header>
         {{#with navigation}}
-        <div class="card">
-            <div class="nav">
-                <div class="col-4">
-                    <h3>{{Logo}}</h3>
-                </div>
-                {{#each links}}
-                <div class="nav-item">
-                    <a href="{{href}}" class="nav-link">{{text}}</a>
-                </div>
-                {{/each}}
-                <div>
-                    <a href="#" class="nav-link disabled">Disabled</a>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body d-flex justify-content-between">
+                        <h3>{{Logo}}</h3>
+                        <div class="nav d-flex aligh-items-center">
+                            {{#each links}}
+                            <div class="nav-item">
+                                <a class="nav-link {{#if @last}}disabled{{/if}}" href="{{href}}">{{text}}</a>
+                            </div>
+                            {{/each}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         {{/with}}
-    </div>
+    </header>
+
 
     {{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
     {{{body}}}
