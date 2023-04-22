@@ -1,0 +1,90 @@
+<main class="p-2">
+    <div class="row">
+        {{#with formBlock}}
+        <div class="col-8">
+            <h1>{{header}}</h1>
+            {{#with rating}}
+            <p>{{title}}: {{value}}</p>
+            {{/with}}
+            {{#with actionBlock}}
+            <div class="nav nav-tabs">
+                {{#each tabs}}
+                <div class="nav-item">
+                    <a class="nav-link {{#if isActive}}active{{/if}}">{{text}}</a>
+                </div>
+                {{/each}}
+            </div>
+
+            <hr class="p-2">
+            <div class="card p-2">
+                <div class="card-body">
+                    {{#with report}}
+                    <h6>{{title}}</h6>
+                    {{#with button}}
+                    <button class="btn btn-secondary"><a href="{{link}}" class="nav-link">{{text}}</a></button>
+                    {{/with}}
+                    {{/with}}
+                </div>
+            </div>
+            {{/with}}
+            <hr class="p-2">
+            {{#with feedbackBlock}}
+            <h4>{{title}}</h4>
+            {{#each buttons}}
+            {{#if isWarning}} <button class="btn btn-warning"><a href="{{link}}" class="nav-link">{{text}}</a></button>
+            {{/if}}
+            {{#if isSuccess}} <button class="btn btn-success"><a href="{{link}}" class="nav-link">{{text}}</a></button>
+            {{/if}}
+            {{#if isDanger}} <button class="btn btn-danger"><a href="{{link}}" class="nav-link">{{text}}</a></button>
+            {{/if}}
+            {{/each}}
+            {{/with}}
+        </div>
+        <div class="col-4">
+            {{#with goodsInfo}}
+            <div class="card m-2">
+                <div class="card-body">
+                    <img class="card-img-top" src="{{photo}}">
+                    <div class="m-2">
+                        <h6>{{name}}</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card px-2 m-2">
+                <div class="card-body">
+                    <h6>{{price}}</h6>
+                    {{#if inMarket}}Є в наявності{{/if}}
+                    <div class="col-8">
+                        {{#each buttons}}
+                        {{#if isPrimary}} <button class="btn btn-primary"><a href="{{link}}"
+                                class="nav-link">{{text}}</a></button>
+                        {{/if}}
+                        {{#if isSecondary}} <button class="btn btn-secondary"><a href="{{link}}"
+                                class="nav-link">{{text}}</a></button>
+                        {{/if}}
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            <div class="card m-2">
+                <div class="card-body">
+                    {{#with seller}}
+                    <p>{{title}}:</p>
+                    <h6>{{value}}</h6>
+                    {{/with}}
+                </div>
+            </div>
+            {{/with}}
+        </div>
+        {{/with}}
+    </div>
+    <hr>
+    <section>
+        {{> reviewItem}}
+    </section>
+
+    <section>
+        {{> shopaction}}
+    </section>
+</main>
