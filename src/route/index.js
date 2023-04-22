@@ -2550,33 +2550,35 @@ router.get('/shopprofile', function (req, res) {
       },
       contacts: {
         title: 'Контакти',
-        contactData: [
-          {
+        contactData: {
+          phone: {
             title: 'Номер телефону',
             value: '+38 (098) 222 22 22',
-            button: {
-              text: 'Редагувати',
-              link: 'https://www.youtube.com/',
-              isPrimary: true,
-            },
           },
-          {
+          additionalPhone: {
             title: 'Додатковий номер телефону',
             value: '+38 (098) 111 11 11',
-            button: {
-              text: 'Очистити',
-              link: 'https://www.youtube.com/',
-              isSecondary: true,
-            },
           },
-          {
+          email: {
             title: 'Електронна адреса',
             value: 'ivanivanov@ukr.net',
-            button: {
-              text: 'Видалити',
-              link: 'https://www.youtube.com/',
-              isDanger: true,
-            },
+          },
+        },
+        buttons: [
+          {
+            text: 'Редагувати',
+            link: 'https://www.youtube.com/',
+            isPrimary: true,
+          },
+          {
+            text: 'Очистити',
+            link: 'https://www.youtube.com/',
+            isSecondary: true,
+          },
+          {
+            text: 'Видалити',
+            link: 'https://www.youtube.com/',
+            isDanger: true,
           },
         ],
       },
@@ -2684,7 +2686,7 @@ router.get('/shopprofile', function (req, res) {
 
 // router.get Створює нам один ентпоїнт
 
-//           ↙ тут вводимо шлях (PATH) до сторінки   
+//           ↙ тут вводимо шлях (PATH) до сторінки
 router.get('/shopcart', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -2707,7 +2709,7 @@ router.get('/shopcart', function (req, res) {
         },
       ],
     },
-    
+
     header: 'Мої замовлення',
     purchase: {
       tabs: ['Всі замовлення', 'Гарантія та повернення'],
@@ -2879,7 +2881,7 @@ router.get('/shopcart', function (req, res) {
           },
         ],
       },
-      
+    },
     header: {
       title: 'Кошик',
       button: {
